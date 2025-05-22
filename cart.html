@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lume-Ecommerce-Cart</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <!-- navbar section -->
+        <section id="header">
+            <a href="#"><img src="img/vastraa_logo-removebg-preview.png" alt="logo" class="logo"></a>
+            <div>
+                <ul id="navbar">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="profile.php">Profile</a></li>
+                    <li id="lg-bag"><a href="cart.html" class="active"><i class="fa-solid fa-bag-shopping"></i></a></li>
+                    <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+                </ul>
+            </div>
+            <div id="mobile">
+                <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
+                <i id="bar" class="fas fa-outdent"></i>
+            </div>
+        </section>
+
+        <!-- Page Header -->
+        <section id="page-header" class="about-header">
+            <h2>#cart</h2>
+            <p>Add your coupon code & SAVE up to 70%!</p>
+        </section>
+
+        <!-- Cart Section -->
+        <section id="cart" class="section-p1">
+            <table width="100%">
+                <thead>
+                    <tr>
+                        <td>Remove</td>
+                        <td>Image</td>
+                        <td>Product</td>
+                        <td>Price</td>
+                        <td>Quantity</td>
+                        <td>Subtotal</td>
+                    </tr>
+                </thead>
+                <tbody> 
+                    <!-- Cart items will be added here dynamically -->
+                </tbody>
+            </table>
+            
+        </section>
+
+        <!-- Cart Add Section -->
+        <section id="cart-add" class="section-p1">
+            <div id="coupon">
+                <h3>Apply Coupon</h3>
+                <div>
+                    <input type="text" placeholder="Enter Your Coupon">
+                    <button class="normal">Apply</button>
+                </div>
+            </div>
+
+            <div id="subtotal">
+                <h3>Cart Totals</h3>
+                <table>
+                    <tr>
+                        <td id="cart-subtotal">$0.00</td>
+                        <td><strong id="cart-total">$0.00</strong></td>
+                        
+                    </tr>
+                    <tr>
+                        <td>Shipping</td>
+                        <td>Free</td>
+                    </tr>
+                    <tr>
+                        <td id="cart-subtotal">$0.00</td>
+                        <td><strong id="cart-total">$0.00</strong></td>
+                        
+                    </tr>
+                </table>
+                <button class="normal">Proceed to checkout</button>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section id="newsLetter" class="section-p1 section-m1">
+            <div class="newsText">
+                <h4>Sign Up for NewsLetter</h4>
+                <p>Get Email updates for our latest Shop and <span>Special Offers.</span></p>
+            </div>
+            <div class="form">
+                <input type="text" placeholder="your email address">
+                <button class="normal">Sign Up</button>
+            </div>
+        </section>
+
+        <!-- Footer section -->
+        <section id="footer" class="section-m1">
+            <div class="top-section">
+                <div class="location">
+                    <h4>Popular location</h4>
+                    <a href="#">Vijaywada</a>
+                    <a href="#">Hyderabad</a>
+                    <a href="#">Delhi</a>
+                    <a href="#">Mumbai</a>
+                </div>
+                <div class="Trending-location">
+                    <h4>Trending location</h4>
+                    <a href="#">Bhopal</a>
+                    <a href="#">Nagpur</a>
+                    <a href="#">Gurugram</a>
+                    <a href="#">Chennai</a>
+                </div>
+                <div class="about-us">
+                    <h4>About Us</h4>
+                    <a href="#">Vastraa</a>
+                </div>
+
+                <div class="Xcuti0n">
+                    <h4>Vastraa</h4>
+                    <a href="#">Shop</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Help</a>
+                    <a href="#">Location</a>
+                    <a href="#">Legal & privacy information</a>
+                </div>
+
+                <div class="follow-us">
+                    <h4>Follow Us</h4>
+                    <div class="icon">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                    <div class="img"></div>
+                </div>
+            </div>
+            <!-- Copyright section -->
+            <div class="copyright">
+                <p>&copy; 2023, Vastraa - Ecommerce Template</p>
+            </div>
+        </section>
+
+        <script src="script.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartBody = document.querySelector("#cart tbody");
+    let subtotal = 0;
+
+    if (cart.length === 0) {
+        cartBody.innerHTML = `<tr><td colspan="6" style="text-align:center;">Your cart is empty.</td></tr>`;
+    } else {
+        cartBody.innerHTML = "";
+        cart.forEach((product, index) => {
+            let price = parseFloat(product.price);
+            let quantity = product.quantity || 1;
+            let productSubtotal = price * quantity;
+            subtotal += productSubtotal;
+
+            cartBody.innerHTML += `
+                <tr class="cart-item">
+                    <td><a href="#" class="remove-item" data-index="${index}"><i class="fa-solid fa-xmark"></i></a></td>
+                    <td><img src="${product.image}" alt="${product.name}" width="50"></td>
+                    <td>${product.name}</td>
+                    <td class="item-price">$${price.toFixed(2)}</td>
+                    <td><input type="number" value="${quantity}" min="1" class="item-quantity" data-index="${index}"></td>
+                    <td class="item-subtotal">$${productSubtotal.toFixed(2)}</td>
+                </tr>
+            `;
+        });
+
+        document.getElementById("cart-subtotal").innerText = `$${subtotal.toFixed(2)}`;
+        document.getElementById("cart-total").innerText = `$${subtotal.toFixed(2)}`;
+
+        document.querySelectorAll(".remove-item").forEach(button => {
+            button.addEventListener("click", function(event) {
+                event.preventDefault();
+                let index = event.target.closest(".remove-item").getAttribute("data-index");
+                cart.splice(index, 1);
+                localStorage.setItem("cart", JSON.stringify(cart));
+                location.reload();
+            });
+        });
+
+        document.querySelectorAll(".item-quantity").forEach(input => {
+            input.addEventListener("change", function(event) {
+                let index = event.target.getAttribute("data-index");
+                cart[index].quantity = Math.max(1, parseInt(event.target.value) || 1);
+                localStorage.setItem("cart", JSON.stringify(cart));
+                location.reload();
+            });
+        });
+    }
+});
+
+
+
+
+        </script>
+    </body>
+
+</html>

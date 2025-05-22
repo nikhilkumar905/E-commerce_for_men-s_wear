@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lume-Ecommerce-Shop</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <div>
+        <!-- navbar section -->
+        <section id="header">
+            <a href="#"><img src="img/vastraa_logo-removebg-preview.png" alt="logo" class="logo"></a>
+            <div>
+                <ul id="navbar">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a class="active" href="shop.html">Shop</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="profile.php">Profile</a></li>
+                    <li id="lg-bag"><a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
+                    <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+                </ul>
+            </div>
+            <div id="mobile">
+                <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
+                <i id="bar" class="fas fa-outdent"></i>
+            </div>
+        </section>
+        <!-- Hero sectio -->
+        <section id="page-header">
+            <h2>#stayTune</h2>
+            <p>Save more with coupons & upto 70% off!</p>
+        </section>
+        <div style="text-align:center; margin: 20px;">
+            <input type="text" id="searchInput" placeholder="Search products..." 
+                onkeyup="searchProducts()" 
+                style="padding: 10px; width: 250px; border: 1px solid #ccc; border-radius: 5px;">
+        </div>
+        
+        
+        
+        <!-- Products 1 section -->
+        <section id="product1" class="section-p1">
+            <div class="pro-container" onclick="window.location.href='sproduct.html';">
+                <!-- 1st product -->
+                <div class="pro" onclick="selectProduct(this)">
+                    <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRzG0ORoHg0CNdsfGesEd8_KB9fgLk6EjSlnE877aFAZX6gLXaaVGwrRlkTAcnwgActTMsVKbJWu-gT0RzRxoDxp3srV9njetwELJpGaU1yPvEXCGnNmIKC">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Blank T-Shirt</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>$100</h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-bag-shopping cart"></i></a>
+                </div>
+                
+                <!-- 2nd product -->
+                <div class="pro" onclick="selectProduct(this)">
+                    <img src="https://images.meesho.com/images/products/42958844/vjigu_512.webp">
+                    <div class="des">
+                        <span>meesho</span>
+                        <h5>stylish Black polyster</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>$100</h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-bag-shopping cart"></i></a>
+                </div>
+                
+
+                <!-- 3rd product  -->
+                <div class="pro" onclick="selectProduct(this)">
+                
+                    <img src="https://m.media-amazon.com/images/I/61pO+RS6KTL._SL1500_.jpg" >
+                    <div class="des">
+                        <span>leriya</span>
+                        <h5>Men's Plain Casual Half Sleeve T-Shirt</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>$120</h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-bag-shopping cart"></i></a>
+                </div>
+                
+
+                <!-- 4th product -->
+                <div class="pro" onclick="selectProduct(this)">
+                
+                    <img src="https://suryapratap2542.github.io/E-comerce/images/products/f5.jpg" >
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Cartoon AstroNuts T-Shirts</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>$78</h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-bag-shopping cart"></i></a>
+                </div>
+
+                <!-- 5th product -->
+                <div class="pro" onclick="selectProduct(this)">
+                
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhFHYjzdj8LxU8uue97ayj_tT0o0TGtCwdng&s" >
+                    <div class="des">
+                        <span>H&M</span>
+                        <h5>Casual Shirts</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>$134</h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-bag-shopping cart"></i></a>
+                </div>
+
+                <!-- 6th product -->
+                <div class="pro" onclick="selectProduct(this)">
+                
+                    <img src="https://imagescdn.thecollective.in/img/app/product/2/298633-3619477.jpg?w=500&auto=format" >
+                    <div class="des">
+                        <span>Zara</span>
+                        <h5>Party shirt</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>$76</h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-bag-shopping cart"></i></a>
+                </div>
+
+                <!-- 7th product -->
+                <div class="pro" onclick="selectProduct(this)">
+                
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrvBDhXww7-6eYXi4-23H77ptEjzaROgXCbA&s" >
+                    <div class="des">
+                        <span>Dior</span>
+                        <h5>Casual loose pant</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>$174</h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-bag-shopping cart"></i></a>
+                </div>
+
+                <!-- 8th product -->
+                <div class="pro" onclick="selectProduct(this)">
+                
+                    <img src="https://pictures.kartmax.in/live/sites/9s145MyZrWdIAwpU0JYS/product-images/md_sword_black_solid_cargo_jeans__1732518559as3113115_1.jpg" >
+                    <div class="des">
+                        <span>Louis vuitton</span>
+                        <h5>Black stylish Cargo pant</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>$150</h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-bag-shopping cart"></i></a>
+                    
+                </div>
+                <!-- 1st product -->
+                <div class="pro" onclick="selectProduct(this)">
+                    <img src="https://m.media-amazon.com/images/I/61qH6rzhT-L._AC_UY1100_.jpg" >
+                    <div class="des">
+                        <span>Zara</span>
+                        <h5>Silky Black Shirt</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>$110</h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-bag-shopping cart"></i></a>
+                </div>
+                <!-- 2nd product -->
+                <div class="pro" onclick="selectProduct(this)">
+                
+                    <img src="https://balenciaga.dam.kering.com/m/2aca038aafcdaaa3/Small-796917TRVI88499_Y.jpg?v=4" >
+                    <div class="des">
+                        <span>Balenciaga</span>
+                        <h5>Full Sleeves Tshirt</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>$111</h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-bag-shopping cart"></i></a>
+                </div>
+
+                <!-- 3rd product  -->
+                <div class="pro" onclick="selectProduct(this)">
+                
+                    <img src="https://cdn-images.farfetch-contents.com/28/08/71/71/28087171_57681623_300.jpg" >
+                    <div class="des">
+                        <span>Balenciaga</span>
+                        <h5>Summer Hoodie</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>$111</h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-bag-shopping cart"></i></a>
+                </div>
+
+                <!-- 4th product -->
+                <div class="pro" onclick="selectProduct(this)">
+                
+                    <img src="https://images.vestiairecollective.com/images/resized/q=75,f=auto,/produit/30934444-1_3.jpg" >
+                    <div class="des">
+                        <span>Chanel</span>
+                        <h5>Black and white jacket</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>$85</h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-bag-shopping cart"></i></a>
+                </div>
+
+                <!-- 5th product -->
+                 <div class="pro" onclick="selectProduct(this)">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWqXt6M2I415OnzYbqfhFkqetlRrz9kHvb3A&s" >
+                    <div class="des">
+                        <span>Diesel</span>
+                        <h5>Men's Anywhere Shirt</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>$150</h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-bag-shopping cart"></i></a>
+                </div>
+
+                <!-- 6th product -->
+                 <div class="pro" onclick="selectProduct(this)">
+                    <img src="https://image.made-in-china.com/202f0j00ZcSizGvqnFpR/Fashionable-Double-Collar-Casual-Shirt-Contrast-Dress-Shirts-for-Man.webp" >
+                    <div class="des">
+                        <span>The North Face</span>
+                        <h5>Fashinable Double Collar Shirt</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>$124</h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-bag-shopping cart"></i></a>
+                </div>
+
+                <!-- 7th product -->
+                 <div class="pro" onclick="selectProduct(this)">
+                    <img src="https://storage.googleapis.com/shy-pub/363348/SKU-0048_0-1711596192685.jpg" >
+                    <div class="des">
+                        <span>Tommy Hilfiger </span>
+                        <h5>Genz Tshirt</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>$115</h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-bag-shopping cart"></i></a>
+                </div>
+
+                <!-- 8th product -->
+                 <div class="pro" onclick="selectProduct(this)">
+                    <img src="https://tiimg.tistatic.com/fp/1/007/841/-winter-wear-sky-blue-full-sleeves-plain-polyester-stitched-mens-jacket--772.jpg" >
+                    <div class="des">
+                        <span>Levi's</span>
+                        <h5>Polyester Stitched Jacket</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>$135</h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-bag-shopping cart"></i></a>
+                </div>
+                
+            </div>
+                
+            
+            
+        </section>
+        
+        <!-- pagination -->
+         <section id="pagination" class="section-p1">
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#"><i class="fa-solid fa-arrow-right"></i></a>
+         </section>
+        <!-- newsletter -->
+        <section id="newsLetter" class="section-p1 section-m1">
+            <div class="newsText">
+                <h4>Sign Up for NewsLetter</h4>
+                <p>Get Email updates for our latest Shop and <span>Special Offers.</span></p>
+            </div>
+            <div class="form">
+                <input type="text" placeholder="your email address" >
+                <button class="normal">Sign Up</button>
+            </div>
+        
+        </section>
+        <!-- Footer section -->
+        <section id="footer" class="section-m1">
+            <div class="top-section">
+                <div class="location">
+                    <h4>Popular location</h4>
+                    <a href="#">Vijaywada</a>
+                    <a href="#">Hyderabad</a>
+                    <a href="#">Delhi</a>
+                    <a href="#">Mumbai</a>
+                </div>
+                <div class="Trending-location">
+                    <h4>Trending location</h4>
+                    <a href="#">Bhopal</a>
+                    <a href="#">Nagpur</a>
+                    <a href="#">Gurugram</a>
+                    <a href="#">Chennai</a>
+                </div>
+                <div class="about-us">
+                    <h4>About Us</h4>
+                    <a href="#">Vastraa</a>
+                </div>
+
+                <div class="Xcuti0n">
+                    <h4>Vastraa</h4>
+                    <a href="#">Shop</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Help</a>
+                    <a href="#">Location</a>
+                    <a href="#">Legal & provacy information</a>
+                </div>
+
+                <div class="follow-us">
+                    <h4>Follow Us</h4>
+                    <div class="icon">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                    <div class="img"></div>
+                </div>
+            </div>
+            <!-- bottom section -->
+            <div class="bottom-section">
+                <a href="#"><img src="img/vastraa_logo-removebg-preview.png" alt=""></a>
+                <div class="straight"></div>
+                
+            </div>
+         </section>
+        <script src="script.js"></script>
+        <script>
+            function searchProducts() {
+                var input, filter, products, productName, i;
+                input = document.getElementById("searchInput");
+                filter = input.value.toUpperCase();
+                products = document.getElementsByClassName("pro");
+            
+                for (i = 0; i < products.length; i++) {
+                    productName = products[i].getElementsByTagName("h5")[0]; // product name in <h5>
+                    if (productName) {
+                        if (productName.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                            products[i].style.display = "";
+                        } else {
+                            products[i].style.display = "none";
+                        }
+                    }       
+                }
+            }
+            </script>
+            
+            
+<section id="search" class="section-p1"></section>            
+    </body>
+
+</html>
